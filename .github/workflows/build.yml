@@ -41,7 +41,14 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
+        working-directory: DGU_IntegracioContinua_BLOC2_AC03
         run: |
-          ${{ runner.temp }}\scanner\dotnet-sonarscanner begin /k:"GuillemSoto_DGU-Ac03-Code-Refactoring" /o:"guillemsoto" /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
-          dotnet build
-          ${{ runner.temp }}\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+          ${{ runner.temp }}\scanner\dotnet-sonarscanner begin `
+            /k:"GuillemSoto_DGU-Ac03-Code-Refactoring" `
+            /o:"guillemsoto" `
+            /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+
+          dotnet build DGU_IntegracioContinua_BLOC2_AC03.sln
+
+          ${{ runner.temp }}\scanner\dotnet-sonarscanner end `
+            /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
