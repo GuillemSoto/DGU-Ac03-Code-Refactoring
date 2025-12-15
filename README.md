@@ -26,3 +26,4 @@
 ### Pregunta 3
 **Com separaríeu la lògica de càlcul en mètodes independents? Raoneu la vostra resposta.**
 Hauria d'haver un mètode que llegeixi cada número, un que comprovi quina condició es compleix (És a dir, que comprovi si a>0, b>0, etc) i un que retorni el valor de resultat per cada càlcul possible, per exemple un retornarà a+b+c (si tots son positius), un altre retornarà 0 (si a és negatiu) o un altre retornarà a.
+Aquesta solució intenta modular el codi el màxim possible per tal que sigui escal·lable en el futur.
