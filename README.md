@@ -1,3 +1,12 @@
+# 1. SonarCloud
+
+---
+
+### Pregunta 1
+**En aquest anàlisi inicial del programa, es mostren resultats en l’apartat de cobertura de codi (coverage)? Raoneu la vostra resposta, incloent una captura de la pantalla de resum de SonarCloud.**  
+
+En aquest anàlisi incial encara no es mostren els resultats respecte a la cobertura de codi es a dir, el coverage. De moment el nostre projecte només conté el Program.cs amb el codi però sense cap test realitzat (xUnit o MSTest, per exemple), per tant, no podrem generar el coverage sense abans implementar tests al nostre projecte.
+
 # 3. Jocs de prova
 
 - Si a > 0, b > 0 i c > 0, el resultat és **a + b + c**.
