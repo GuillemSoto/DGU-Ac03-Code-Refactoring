@@ -36,3 +36,28 @@ En aquest anàlisi incial encara no es mostren els resultats respecte a la cober
 **Com separaríeu la lògica de càlcul en mètodes independents? Raoneu la vostra resposta.**
 Hauria d'haver un mètode que llegeixi cada número, un que comprovi quina condició es compleix (És a dir, que comprovi si a>0, b>0, etc) i un que retorni el valor de resultat per cada càlcul possible, per exemple un retornarà a+b+c (si tots son positius), un altre retornarà 0 (si a és negatiu) o un altre retornarà a.
 Aquesta solució intenta modular el codi el màxim possible per tal que sigui escal·lable en el futur.
+
+### Pregunta 4
+**Es poden passar tots els tests correctament? Com es captura la sortida per consola? Raoneu la vostra resposta i poseu algun exemple on ho heu implementat.**
+![testing image](Images\TestCode.png)
+En l'image es testega el codi senes refactoritzar i el codi refactoritzat. Tots els tests s'han passat correctament.
+
+Per capturar la sortida per consola hem utilitzat dos metodes diferents. 
+- En el primer, en comptes de printar el missatge, s'ha emagatzemat aquest en una variable del tipus string i s'ha comprovat el resultat.
+- En el segon, el metode si que printa el missatge, i en comptes d'utilitzar una variable en el test per emagatzemar el missatge i despres comprovar-lo s'ha fet el seguent: 
+```
+public void TC3_Test_AfterRefactor_With_ConsoleOutput(int firstNum, int secondNum, int thirdNum, int expectedResult, string msgExpected)
+{
+    //Arrange
+    StringWriter msgResult = new StringWriter();
+    Console.SetOut(msgResult);
+    int result;
+
+    //Act
+    IssuesCode.CalculSumsRefactorWithConsoleOutput(firstNum, secondNum, thirdNum, out result);
+
+    //Assert
+    Assert.Equal(expectedResult, result);
+    Assert.Equal(msgExpected, msgResult.ToString());
+}
+```
