@@ -45,7 +45,8 @@ jobs:
             /d:sonar.login="$env:SONAR_TOKEN" `
             /d:sonar.sources="DGU_IntegracioContinua_BLOC2_AC03" `
             /d:sonar.tests="TestCodeRefactor" `
-            /d:sonar.cs.opencover.reportsPaths="**/TestResults/**/coverage.opencover.xml"
+            /d:sonar.cs.opencover.reportsPaths="**/TestResults/**/coverage.opencover.xml" `
+            /d:sonar.coverage.exclusions="**/*Program.cs"
 
       - name: Build
         run: |
