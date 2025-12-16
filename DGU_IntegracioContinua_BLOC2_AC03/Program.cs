@@ -2,7 +2,7 @@ namespace Refactor
 {
     public class Program //class Program & static void Main -> public, since you cannot test otherwise
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             //unusedVar simplement no es feia servir al programa i només ocupava espai.
             const string WelcomeMsg = "Benvingut al programa de càlculs!";
@@ -49,8 +49,8 @@ namespace Refactor
             const string ZeroMsg = "El resultat és zero.";
             switch (result)
             {
-                case 0: Console.WriteLine(ZeroMsg); break;
-                case > 0: Console.WriteLine(PositiveMsg); break;
+                case 0: Console.Write(ZeroMsg); break;
+                case > 0: Console.Write(PositiveMsg); break;
                 default: break;
             }
         }

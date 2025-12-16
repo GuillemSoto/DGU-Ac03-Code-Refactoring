@@ -58,7 +58,7 @@ Aquesta solució intenta modular el codi el màxim possible per tal que sigui es
 ### Pregunta 4
 **Es poden passar tots els tests correctament? Com es captura la sortida per consola? Raoneu la vostra resposta i poseu algun exemple on ho heu implementat.**
 ![testing image](Images/TestCode.png)
-En l'image es testega el codi senes refactoritzar i el codi refactoritzat. Tots els tests s'han passat correctament.
+En l'image es testega el codi senes refactoritzar i el codi refactoritzat passant-hi els mateixos valors. Tots els tests s'han passat correctament.
 
 Per capturar la sortida per consola hem utilitzat dos metodes diferents. 
 - En el primer, en comptes de printar el missatge, s'ha emagatzemat aquest en una variable del tipus string i s'ha comprovat el resultat.
