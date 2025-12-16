@@ -9,7 +9,23 @@ En aquest anàlisi incial encara no es mostren els resultats respecte a la cober
 
 ![SonarCube start coverage](Images/SonarCube_Coverage.png)
 
+# 2. Refactoring del codi
+
+---
+
+### Pregunta 2
+**Quines accions heu realitzat per reduir la complexitat ciclomàtica?  Raoneu la vostra resposta.**
+
+Primer hem canviat l'accés de class Program & static void Main a public, ja que si no es fa no pots testejar el codi.
+Després hem tret unusedVar i una part del codi cap al final ja que cap dels dos fragments estava fent res.
+Console.WriteLine("Benvingut al programa de càlculs!") i Console.WriteLine("Finalitzant el programa...") estaven duplicats i a més tots els missatges estaven posats com a literals en comptes de com a constants, així que també ho hem canviat.
+Després d'això hem posat a les variables a, b i c els noms firstNum, secondNum i thirdNum, ja que aquests són més descriptius.
+Una vegada tot fet hem passat gran part del codi a una funció separada i arreglat una cadena d'ifs que no era agradable ni eficient i l'hem passat a una cadena d'else if i a un switch respectivament.
+Per últim, hem separat la funció que calcula el resultat de la que el printa per tal de tenir un codi més modular
+
 # 3. Jocs de prova
+
+---
 
 - Si a > 0, b > 0 i c > 0, el resultat és **a + b + c**.
 - Si a > 0, b > 0 i c ≤ 0, el resultat és **a + b**.
