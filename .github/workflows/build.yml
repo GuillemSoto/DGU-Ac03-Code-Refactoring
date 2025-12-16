@@ -52,7 +52,7 @@ jobs:
           dotnet build DGU_IntegracioContinua_BLOC2_AC03/DGU_IntegracioContinua_BLOC2_AC03.sln
 
       - name: Test with Coverage
-        run: dotnet test TestCodeRefactor/TestRefactor.csproj --no-build --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+        run: dotnet test TestCodeRefactor/TestCodeRefactor.csproj --no-build --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
 
 
       - name: SonarCloud End
