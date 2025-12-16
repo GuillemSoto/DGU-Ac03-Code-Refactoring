@@ -62,7 +62,7 @@ En l'image es testega el codi senes refactoritzar i el codi refactoritzat passan
 
 Per capturar la sortida per consola hem utilitzat dos metodes diferents. 
 - En el primer, en comptes de printar el missatge, s'ha emagatzemat aquest en una variable del tipus string i s'ha comprovat el resultat.
-- En el segon, el metode si que printa el missatge, i en comptes d'utilitzar una variable en el test per emagatzemar el missatge i despres comprovar-lo s'ha fet el seguent: 
+- En el segon, el metode si que printa el missatge, i en comptes d'utilitzar una variable en el test per emagatzemar el missatge i despres comprovar-lo s'ha fet el seguent codi, en el que s'emagatzema l'output (Console.WriteLine) en la variable msgResult i despres es comprova que sigui correcte: 
 ```
 public void TC3_Test_AfterRefactor_With_ConsoleOutput(int firstNum, int secondNum, int thirdNum, int expectedResult, string msgExpected)
 {
