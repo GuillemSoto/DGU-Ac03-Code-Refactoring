@@ -1,75 +1,59 @@
-﻿// Program.cs
-using System;
-
-namespace CodeWithIssues
+namespace Refactor
 {
-    class Program
+    public class Program //class Program & static void Main -> public, since you cannot test otherwise
     {
         static void Main(string[] args)
         {
-            int unusedVar = 10;
+            //unusedVar simplement no es feia servir al programa i només ocupava espai.
+            const string WelcomeMsg = "Benvingut al programa de càlculs!";
+            const string EndingMsg = "Finalitzant el programa...";
+            Console.WriteLine(WelcomeMsg);
+            //Console.WriteLine("Benvingut al programa de càlculs!"); i Console.WriteLine("Finalitzant el programa..."); estaven duplicats i a més tots els missatges estàn posats com a literals en comptes de com a constants.
 
-            Console.WriteLine("Benvingut al programa de càlculs!");
-            Console.WriteLine("Benvingut al programa de càlculs!");
-
-            int a = 5;
-            int b = 10;
-            int c = 15;
+            //Hem de posar noms descriptius a les variables
+            int firstNum = 5;
+            int secondNum = 10;
+            int thirdNum = 15;
             int result = 0;
+            CalculateResult(ref firstNum, ref secondNum, ref thirdNum, out result);
+            //El programa tenia codi que no estava fent res, així que l'hem esborrat.
 
-            if (a > 0)
-            {
-                if (b > 0)
-                {
-                    if (c > 0)
-                    {
-                        result = a + b + c;
-                    }
-                    else
-                    {
-                        result = a + b;
-                    }
-                }
-                else
-                {
-                    result = a;
-                }
-            }
-            else
+            
+            Console.WriteLine(EndingMsg);
+        }
+        public static void CalculateResult(ref int firstNum, ref int secondNum, ref int thirdNum, out int result)
+        {
+            if (firstNum <= 0)
             {
                 result = 0;
             }
-
-            if (result == 0)
+            else if(secondNum <= 0)
             {
-                Console.WriteLine("El resultat és zero.");
+                result = firstNum;
             }
-            else if (result > 0)
+            else if(thirdNum <= 0)
             {
-                Console.WriteLine("El resultat és positiu.");
+                result = firstNum + secondNum;
             }
             else
             {
-                Console.WriteLine("El resultat és negatiu.");
+                result = firstNum + secondNum + thirdNum;
             }
-
-            int counter = 0;
-            while (true)
-            {
-                counter++;
-                if (counter > 100)
-                {
-                    break;
-                }
-            }
-
-            // int oldVar = 20;
-
-            int x = 5;
-            x = x + 0;
-
-            Console.WriteLine("Finalitzant el programa...");
-            Console.WriteLine("Finalitzant el programa...");
+            PrintResult(result);
+            //Hi havia una cadena d'if//else estranya que funcionaba però no era correcta
         }
+        public static void PrintResult(int result)
+        {
+            //Hem separat la funció que calcula el resultat de la que el printa
+            const string PositiveMsg = "El resultat és positiu.";
+            const string ZeroMsg = "El resultat és zero.";
+            switch (result)
+            {
+                case 0: Console.WriteLine(ZeroMsg); break;
+                case > 0: Console.WriteLine(PositiveMsg); break;
+                default: break;
+            }
+        }
+
     }
 }
