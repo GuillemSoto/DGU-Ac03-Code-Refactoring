@@ -38,14 +38,13 @@ jobs:
           New-Item -Path ${{ runner.temp }}\scanner -ItemType Directory
           dotnet tool update dotnet-sonarscanner --tool-path ${{ runner.temp }}\scanner
       - name: Build, Test and analyze
+        shell: powershell
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        shell: powershell
         run: |
           ${{ runner.temp }}\scanner\dotnet-sonarscanner begin `
             /k:"GuillemSoto_DGU-Ac03-Code-Refactoring" `
             /o:"guillemsoto" `
-            /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
             /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml"
       
           dotnet build DGU_IntegracioContinua_BLOC2_AC03/DGU_IntegracioContinua_BLOC2_AC03.sln
@@ -55,5 +54,4 @@ jobs:
             --collect:"XPlat Code Coverage" `
             -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
       
-          ${{ runner.temp }}\scanner\dotnet-sonarscanner end `
-            /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+          ${{ runner.temp }}\scanner\dotnet-sonarscanner end
