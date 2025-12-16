@@ -32,5 +32,23 @@ namespace TestCodeRefactor
             Assert.Equal(expectedResult, result);
             Assert.Equal(msgExpected, msgResult.ToString());
         }
+
+        [Fact]
+        public void TC3_Test_FunctionMain_PrintMessages()
+        {
+            // Arrange
+            var output = new StringWriter();
+            Console.SetOut(output);
+
+            // Act
+            Program.Main(Array.Empty<string>());
+
+            // Assert
+            string result = output.ToString();
+
+            Assert.Contains("Benvingut al programa de càlculs!", result);
+            Assert.Contains("El resultat és positiu.", result);
+            Assert.Contains("Finalitzant el programa...", result);
+        }
     }
 }
