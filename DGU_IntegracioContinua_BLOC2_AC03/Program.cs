@@ -44,14 +44,17 @@ namespace Refactor
         }
         public static void PrintResult(int result)
         {
-            //Hem separat la funció que calcula el resultat de la que el printa
             const string PositiveMsg = "El resultat és positiu.";
             const string ZeroMsg = "El resultat és zero.";
-            switch (result)
+
+            // Eliminem switch + default (branca morta)
+            if (result == 0)
             {
-                case 0: Console.Write(ZeroMsg); break;
-                case > 0: Console.Write(PositiveMsg); break;
-                default: break;
+                Console.Write(ZeroMsg);
+            }
+            else
+            {
+                Console.Write(PositiveMsg);
             }
         }
 
