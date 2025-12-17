@@ -95,7 +95,7 @@ public void TC3_Test_AfterRefactor_With_ConsoleOutput(int firstNum, int secondNu
 
 El més difícil ha estat al principi referenciar el arxiu ".csproj" dels tests unitaris en el workflow ".yml". Un cop resolt aquest problema el següent error que va sortir va ser en el SonarCube.  
 
-L'error (segons ChatGPT) es deu al fet que certes lines del codi del "Program.cs" no són testejats per tant, com es veu en la imatge d'adalt el *coverage* només arriba a un 75%, abaix del mínim. En el nostre cas, certes lineas de codi com la linea amb el "default" o els "Console.WriteLine" del metode Main han de ser testejats perquè deixin de sortir en vermell en l'ànalisi (uncovered lines).
+L'error (segons ChatGPT) es deu al fet que certes lines del codi del "Program.cs" no són testejats per tant, com es veu en la imatge d'adalt el *coverage* només arriba a un 75%, a sota del mínim. En el nostre cas, certes lineas de codi com la linea amb el "default" o els "Console.WriteLine" del metode Main han de ser testejats perquè deixin de sortir en vermell en l'ànalisi (uncovered lines).
 
 ChatGPT va recomanar dues opcions per a que deixes de sortir en vermell en aquestes lines i es poguès realitzar la cobertura de lineas o coverage de manera correcta. La primera opció era separar tota la lógica del Main i posar-la en un altre mètode del qual haurem de fer un test unitari d'aquest, en canvi la segon opció era afegir un linea de codi al arxiu ".yml" de la carpeta Workflows per tal de ignorar el arxiu "Program.cs".  
 
