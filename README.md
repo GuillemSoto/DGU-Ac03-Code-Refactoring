@@ -1,3 +1,5 @@
+##### Guillem Soto, Unai Arévalo i Diego Grajeda
+---
 # 1. SonarCloud
 
 ---
@@ -123,3 +125,15 @@ Com a resultat final ara quan es feia l'anàlisi al SonarCloud ja no sortia *cov
 ![SonarCube final analysis](Images/SonarCube_FinalAnalysis.png)  
 
 ![SonarCube final coverage](Images/SonarCube_FinalCoverage.png)
+
+
+---
+
+- Distribució de treball: Guillem (apartat 2 i 3) - Unai (apartat 1 i 4) - Diego (apartat 1 i 5)  
+
+- Evidències de configuració SonarCube (en la carpeta images d'aquest repo)  
+
+- Webgrafia:  
+*ChatGPT - 16/12/25 - Error en el workflow* - https://chatgpt.com/share/69445814-ca94-800b-b74b-589fb7e0c5b8  
+*ChatGPT - 16/12/25 - Lineas de codi no covertes (not coverage)* - https://chatgpt.com/share/6941f3a4-f208-800b-9f2d-0e7a076be325
+
